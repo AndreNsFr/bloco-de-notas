@@ -42,14 +42,14 @@ var nota_index = localStorage.length
 function setNewContentNote(){
 
     if(document.getElementById("titulo").value != "" && document.getElementById("conteudo_da_Nota").value != ""){
-    
-    var titulo = document.getElementById("titulo").value
-    var conteudo = document.getElementById("conteudo_da_Nota").value
 
-    const nota = {
-        titulo: titulo,
-        conteudo:conteudo,
-        index: nota_index
+        var titulo = document.getElementById("titulo").value
+        var conteudo = document.getElementById("conteudo_da_Nota").value
+
+        const nota = {
+            titulo: titulo,
+            conteudo:conteudo,
+            index: nota_index
     }
 
     let nota_stringtfy = JSON.stringify(nota) /*que coisa UTIL NAMORAL, se usar isso com o parse, nossssa, ajuda demais na vida*/ 
@@ -72,6 +72,15 @@ function setNewContentNote(){
 
     
 }
+
+
+
+
+
+
+
+
+
 
 function mostrar(mostrar_esta_nota){
 
