@@ -1,0 +1,135 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #EEE5E9;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #CC2936;
+    height: 50px;
+    width: 100%;
+    padding: 10px;
+}
+
+
+
+
+#menu_hamburguer{
+    width: 40px;
+    
+    position: absolute;
+    margin: 15px ;
+}
+
+#voltar {
+    display: none;
+    margin-top: 3px;
+    right: 6px;
+    width: 60px;
+    position: absolute;
+    
+    
+}
+
+.aside{
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    margin: 2px;
+    position: absolute;
+    background-color: #6B818C;
+    min-height: 100px;
+    min-width: 250px;
+    border-radius: 5px;
+}
+
+.aside div{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 230px;
+    margin: 10px;
+    height: 40px;
+    border-radius: 8px;
+
+}
+
+.aside  p {
+    display: block;
+    text-align: center;
+    max-width: 280px;
+    text-wrap: wrap;
+    padding: 5px;
+}
+
+.divs-aside{
+    background-color: #F1BF98;
+}
+
+.bloco-principal{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 10px;
+    padding: 25px;
+    background-color: #154962;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    min-height: 80vh;
+    border-radius: 1em;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.342);
+}
+
+.bloco-principal input[type="text"]{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18pt;
+    background-color: #EEE5E9;
+    text-align: center;
+    width: 70vw;
+    padding: 15px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    height: 30px;
+}
+
+
+
+.bloco-principal  textarea {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15pt;
+    background-color: #EEE5E9;
+    resize: none;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 15px;
+    width: 70vw;
+    height: 60vh;
+    margin-bottom: 10px;
+}
+
+#centro{
+    margin-top: 25px;
+}
+
+#apagar-nota{
+    margin: 10px;
+    width: 40px;
+    right: 14%;
+    position: absolute;
+}
+
+button{
+    width: 100px;
+    height: 30px;
+    border-radius: 15px;
+    border: 3px solid rgba(0, 0, 0, 0.801);
+}
