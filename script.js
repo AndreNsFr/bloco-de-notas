@@ -90,23 +90,33 @@ function mostrar(mostrar_esta_nota){
     Div.setAttribute("id", "div-a-trocar2")
     var div3 = document.createElement("div")
     div3.setAttribute("style" , "display: grid; place-items: center; ")
+    div3.setAttribute("class", "alterações")
 
     var img = document.createElement("img")
     img.setAttribute("src", "src/apagar.png")
     img.setAttribute("id", "apagar-nota")
     img.setAttribute("onclick", "apagar_nota(this.getAttribute('index1'))")
     img.setAttribute("index1", mostrar_esta_nota)
+
+    var editar = document.createElement("img")
+    editar.setAttribute("src", "src/editar.png")
+    editar.setAttribute("id", "editar")
+    editar.setAttribute("onclick", "editar_alteracao(this.getAttribute('index1'))")
+    editar.setAttribute("index1", mostrar_esta_nota)
     
     div3.appendChild(img)
+    div3.appendChild(editar)
 
     var titulo_Novo = document.createElement("input")
     titulo_Novo.setAttribute("type", "text")
     titulo_Novo.setAttribute("id", "titulo")
     titulo_Novo.setAttribute("name", "text")
+    titulo_Novo.readOnly = true
     titulo_Novo.value = nota.titulo
 
     var conteudo_Novo = document.createElement("textarea")
     conteudo_Novo.setAttribute("id","conteudo_da_Nota")
+    conteudo_Novo.readOnly = true
     conteudo_Novo.value = nota.conteudo
 
     div.appendChild(titulo_Novo)
@@ -204,4 +214,57 @@ function apagar_nota(esta){
     var atualizar_aside = document.getElementsByClassName("aside")[0]
     atualizar_aside.getElementsByClassName("divs-aside")[esta].style.display = "none"
     } 
+}
+
+
+
+const criar_icon_salvar = (save) =>{
+    var aondeCriar = document.getElementsByClassName("alterações")[0]
+
+    var salvar = document.createElement("img")
+    salvar.setAttribute("src", "src/salvar.png")
+    salvar.setAttribute("id", "salvar")
+    salvar.setAttribute("index1", save)
+    salvar.setAttribute("onclick", "salvar_edicao(this.getAttribute('index1'))")
+    
+    aondeCriar.appendChild(salvar)
+
+
+}
+
+function salvar_edicao(isto){
+    
+    var novo_titulo = document.getElementById("titulo").value
+    var nova_nota = document.getElementById("conteudo_da_Nota").value
+
+    const nota = {
+        titulo: novo_titulo,
+        conteudo:nova_nota,
+        index: isto
+    }
+
+    document.getElementsByClassName("divs-aside")[isto].innerHTML = `<p>${novo_titulo}</p>`
+
+    var valores_a_serem_substituidos = JSON.stringify(nota)
+
+    localStorage.setItem(isto, `${valores_a_serem_substituidos}` )
+    
+    document.getElementsByTagName("input")[0].readOnly = true
+    document.getElementsByTagName("textarea")[0].readOnly = true 
+
+    document.getElementById("salvar").style.display = "none"
+
+
+}
+
+function editar_alteracao(editar_esta_nota){
+
+    var atualizar_titulos = document.getElementsByTagName("input")[0]
+    atualizar_titulos.readOnly = false
+
+    var atualizar_Nota = document.getElementsByTagName("textarea")[0]
+    atualizar_Nota.readOnly = false 
+
+    criar_icon_salvar(editar_esta_nota)
+
 }

@@ -127,6 +127,20 @@ header{
     position: absolute;
 }
 
+#editar{
+    margin: 20px;
+    width: 40px;
+    right: 18%;
+    position: absolute;
+}
+
+#salvar{
+    margin: 20px;
+    width: 40px;
+    right: 23%;
+    position: absolute;
+}
+
 button{
     width: 100px;
     height: 30px;
